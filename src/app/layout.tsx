@@ -2,13 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./navbar";
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import StreamClientProvider from "@/providers/StreamClientProvider";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -32,14 +26,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <StreamClientProvider>
-            {/* <Navbar /> */}
-
-            {/* <SignedOut> */}
-            {/* <SignInButton /> */}
-            {/* </SignedOut> */}
-            {/* <SignedIn> */}
-            {/* <UserButton /> */}
-            {/* </SignedIn> */}
+            <Navbar />
 
             {children}
             <Toaster />
