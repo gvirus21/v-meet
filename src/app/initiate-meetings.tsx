@@ -70,27 +70,31 @@ const InitiateMeetings = () => {
     }
   };
 
-  if (!client || !user) return <Loader />;
+  // console.log("client: ", client)
 
   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetail?.id}`;
 
   return (
     <div className="flex flex-col justify-center">
       <div className="h-[40rem]">
-        <div className="flex flex-col gap-10 lg:w-[26rem] 2xl:w-[40rem] text-white lg:mt-10">
-          <MeetingAction
-            handleClick={() => {
-              setMeetingState("isCreatingMeeting");
-            }}
-          >
-            Create an Instant Meeting
-          </MeetingAction>
-          <MeetingAction
-            handleClick={() => setMeetingState("isScheduleMeeting")}
-          >
-            Schedule a Meeting
-          </MeetingAction>
-        </div>
+        {!client || !user ? (
+          <Loader className="bg-transparent h-4/6 lg:w-[26rem] 2xl:w-[40rem]" />
+        ) : (
+          <div className="flex flex-col gap-10 lg:w-[26rem] 2xl:w-[40rem] text-white lg:mt-10">
+            <MeetingAction
+              handleClick={() => {
+                setMeetingState("isCreatingMeeting");
+              }}
+            >
+              Create an Instant Meeting
+            </MeetingAction>
+            <MeetingAction
+              handleClick={() => setMeetingState("isScheduleMeeting")}
+            >
+              Schedule a Meeting
+            </MeetingAction>
+          </div>
+        )}
       </div>
 
       {!callDetail ? (
