@@ -9,6 +9,11 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import StreamClientProvider from "@/providers/StreamClientProvider";
+import { Toaster } from "@/components/ui/toaster";
+
+import "@stream-io/video-react-sdk/dist/css/styles.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,16 +31,19 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          {/* <Navbar /> */}
+          <StreamClientProvider>
+            {/* <Navbar /> */}
 
-          {/* <SignedOut> */}
-          {/* <SignInButton /> */}
-          {/* </SignedOut> */}
-          {/* <SignedIn> */}
-          {/* <UserButton /> */}
-          {/* </SignedIn> */}
+            {/* <SignedOut> */}
+            {/* <SignInButton /> */}
+            {/* </SignedOut> */}
+            {/* <SignedIn> */}
+            {/* <UserButton /> */}
+            {/* </SignedIn> */}
 
-          {children}
+            {children}
+            <Toaster />
+          </StreamClientProvider>
         </body>
       </html>
     </ClerkProvider>
