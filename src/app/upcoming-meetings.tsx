@@ -24,12 +24,18 @@ const UpcomingMeetings = () => {
                 const title =
                   meeting.state?.custom?.description || "No Description";
 
-                const date = (meeting as Call).state?.startsAt?.toLocaleString(
+                const time = (meeting as Call).state?.startsAt?.toLocaleString(
                   "en-US",
                   {
-                    dateStyle: "short",
+                    hour: "numeric",
+                    minute: "numeric",
+                    hour12: true,
                   }
                 );
+
+                const date = (
+                  meeting as Call
+                ).state?.startsAt?.toLocaleDateString("en-GB");
 
                 const link = `/meeting/${(meeting as Call).id}`;
 
@@ -40,7 +46,11 @@ const UpcomingMeetings = () => {
                     className="flex justify-between items-center h-[6rem] px-6 bg-white rounded-xl cursor-pointer"
                   >
                     <h3 className="text-2xl capitalize">{title}</h3>
-                    <p className="text-xl">{date}</p>
+
+                    <div className="flex flex-col items-end">
+                      <p className="text-lg">{time}</p>
+                      <p className="text-sm">{date}</p>
+                    </div>
                   </Link>
                 );
               })
