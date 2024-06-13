@@ -36,7 +36,7 @@ const MeetingRoom = () => {
   // for more detail about types of CallingState see: https://getstream.io/video/docs/react/ui-cookbook/ringing-call/#incoming-call-panel
   const callingState = useCallCallingState();
 
-  if (callingState !== CallingState.JOINED) return <Loader />;
+  if (callingState !== CallingState.JOINED) return <Loader className='h-screen' />;
 
   const CallLayout = () => {
     switch (layout) {

@@ -1,9 +1,19 @@
-import Image from 'next/image';
+import { Oval } from "react-loader-spinner";
+import { cn } from "@/lib/utils";
 
-const Loader = () => {
+interface Props {
+  className?: string;
+}
+
+const Loader = ({ className }: Props) => {
   return (
-    <div className="flex-center h-screen w-full">
-      <p>loading...</p>
+    <div
+      className={cn(
+        "flex justify-center items-center h-full w-full bg-black",
+        className
+      )}
+    >
+      <Oval color="white" secondaryColor="#666" height={"60px"} />
     </div>
   );
 };
