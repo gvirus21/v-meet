@@ -22,9 +22,12 @@ export default function Home() {
               What do you want to do today?
             </p>
           </div>
-          <p className="hidden lg:block text-2xl lg:text-4xl font-semibold mt-6">
-            {time}
-          </p>
+          <div className="flex flex-col items-end">
+            <p className="hidden lg:block text-2xl lg:text-4xl font-semibold mt-6">
+              {time}
+            </p>
+            <p className="mt-1">{date}</p>
+          </div>
         </div>
         <div className="flex flex-col lg:flex-row justify-between w-full mt-32">
           <InitiateMeetings />
