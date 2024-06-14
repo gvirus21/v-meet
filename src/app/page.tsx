@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen lg:h-screen text-white bg-black dark:bg-grid-white/[0.2] bg-grid-black/[0.2]">
-      <div className="flex flex-col items-center p-24 z-10">
+      <div className="flex flex-col items-center px-24 pt-24 z-10">
         <div className="flex w-full justify-between mt-10 2xl:mt-32">
           {user ? (
             <div>

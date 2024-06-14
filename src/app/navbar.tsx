@@ -18,28 +18,29 @@ const Navbar = () => {
 
   if (user) {
     return (
-      <nav className="fixed inset-0 flex justify-between h-20 px-24 py-6 text-white">
-        <p className="uppercase tracking-wider">Veet</p>
-
-        <div className="flex justify-center items-center">
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <Image
-                className="h-8 w-8 rounded-full bg-white cursor-pointer"
-                height={100}
-                width={100}
-                alt="profile"
-                src={user?.imageUrl || ""}
-              />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="mt-2 mr-20">
-              <DropdownMenuLabel>{user.firstName}</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={() => console.log("logout")}>
-                <SignOutButton>Sign out</SignOutButton>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+      <nav className="fixed inset-0 flex justify-between items-center px-20 h-20 w-[99vw] 2xl:w-screen text-white">
+        <div className="flex items-center w-full">
+          <p className="uppercase tracking-wider">Veet</p>
+          <div className="ml-auto flex items-center">
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <Image
+                  className="h-8 w-8 rounded-full bg-white cursor-pointer"
+                  height={100}
+                  width={100}
+                  alt="profile"
+                  src={user?.imageUrl || ""}
+                />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="absolute right-0 mt-2">
+                <DropdownMenuLabel>{user.firstName}</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <SignOutButton>Sign out</SignOutButton>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </nav>
     );
