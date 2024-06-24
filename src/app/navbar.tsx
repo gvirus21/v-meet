@@ -20,7 +20,7 @@ const Navbar = () => {
     return (
       <nav className="fixed inset-0 flex justify-between items-center px-20 h-20 w-[99vw] 2xl:w-screen text-white">
         <div className="flex items-center w-full">
-          <p className="uppercase tracking-wider">Veet</p>
+          <p className="uppercase tracking-wider">V Meet</p>
           <div className="ml-auto flex items-center">
             <DropdownMenu>
               <DropdownMenuTrigger>
