@@ -1,3 +1,13 @@
+# V-meet - Video Conferencing App
+
+![20240626_170054_285](https://github.com/gvirus21/v-meet/assets/69251030/5064a79a-dcc7-4261-9d98-11c727fe5ae9)
+
+- V-meet is a robust video conferencing app inspired by Google Meet, designed to facilitate seamless virtual meetings. The app features a user-friendly interface, secure authentication, and comprehensive video conferencing capabilities. With V-meet, users can easily schedule and record meetings, making it a versatile tool for personal and professional use.
+
+- Key Tech stack used: Next Js, Clerk, Stream.
+
+- Hosted link: https://v-meet-theta.vercel.app/
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
